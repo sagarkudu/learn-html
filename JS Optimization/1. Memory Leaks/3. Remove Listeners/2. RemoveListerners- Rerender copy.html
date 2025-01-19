@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <p>
+        Update text with by clicking button
+    </p>
+
+    <button id="button">Click me</button>
+    <div id="text">Initial Text</div>
+
+    <script>
+        var element = document.getElementById('button')
+        var text = document.getElementById('text')
+
+        function addListener() {
+            element.addEventListener('click', function(event){
+                console.log('clicked')
+                text.innerHTML = 'new text added'
+            })
+        }
+
+        // addListener()
+        // put event listener into setInterval makes memory leakage
+        function rerender(){
+            setInterval(()=>{
+                addListener()
+            }, 500)
+        }
+
+        rerender()
+
+        // Note- on first clicked, it renders dom 2 times
+        // Note- on second clicked, it renders dom  5 times
+        // Note- on third clicked, it renders dom 10 times
+    </script>
+</body>
+</html>

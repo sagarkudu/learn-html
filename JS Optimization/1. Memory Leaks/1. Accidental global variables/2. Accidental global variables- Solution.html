@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accidental global variable</title>
+    <script>
+        "use strict"; // Corrected the syntax for enabling strict mode
+
+        // Global variable
+        var a = 10;
+
+        // c is local to the abc function
+        function abc(){
+          var c = "Hi Sagar Kudu"; // Declared c as a local variable
+        }
+        abc();
+        console.log(window.c); // Logs undefined since c is not in the global scope
+
+        // d is attached to the global object using 'this'
+        function abcd(){
+            this.d = "I love India";
+        }
+        new abcd();
+        console.log(window.d); // Logs "I love India" as d is attached to the global object
+
+    </script>
+</head>
+<body>
+   <p>
+    Note: Using 'use strict' on top can prevent accidentally leaking values or references to the global space where anyone can access, which can lead to memory leaks. Additionally, it prevents accidental variable declarations that might overwrite global variables.
+   </p> 
+
+   <code>
+    <pre>
+        &lt;&gt;
+        "use script"
+
+        //global variable
+        var a = 10;
+
+        //c is global
+        function abc(){
+          var  c = "Hi Sagar Kudu" //declare the variable
+        }
+        abc()
+        console.log(window.c)
+
+        //d is still global here
+        function abcd(){
+            this.d = "I love india"
+        }
+        new abcd() //create new instance 
+        console.log(window.d) 
+        &lt;&gt;
+    </pre>
+   </code>
+</body>
+</html>

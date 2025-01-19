@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Element Example</title>
+</head>
+
+<body>
+
+    <h1>Form Element Example</h1>
+
+    <form action="/submit" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        <li>
+            The <code>&lt;form&gt;</code> element is used to create an HTML form.
+        </li>
+        <li>
+            The <code>action="/submit"</code> attribute specifies the URL to which the form data will be sent on submission.
+        </li>
+        <li>
+            The <code>method="post"</code> attribute specifies the HTTP method (post) used when sending form data.
+        </li>
+        <li>
+            Inside the form, various form controls are used, such as <code>&lt;input&gt;</code> elements for text, password, and email input.
+        </li>
+        <li>
+            The <code>required</code> attribute in input fields indicates that the field must be filled out before submitting the form.
+        </li>
+        <li>
+            The <code>label</code> elements are used for labeling form controls, enhancing accessibility.
+        </li>
+        <li>
+            The <code>for</code> attribute in labels associates the label with its corresponding input field using the input field's <code>id</code>.
+        </li>
+    </ul>
+
+</body>
+
+</html>

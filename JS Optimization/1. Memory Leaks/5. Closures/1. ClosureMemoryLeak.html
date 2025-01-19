@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Closures Memory Leak</p>
+
+    <script>
+      /// any variable which we are going to store data -->
+      var data = null
+
+      // Declaring function which will be called repeatedly to do some job in some interval of time
+
+      var replaceData = function () {
+        // overriding the data with such which has huge data
+        data = {
+          // creating new references always
+          longStr: new Array(1000000),
+          someMethod: function () {
+            console.log('Bye')
+          },
+        }
+      }
+
+      setInterval(replaceData, 1000) //
+    </script>
+
+    <p>
+      after calling set interval, 'data' is being creating again and again, so
+      it will start leaking the data Memory-->Profile-->Select JS VM instance
+      e.g 89.5 ↑4.2 MB/s 127.0.0.1:5500:Main (Total JS heap size)
+    </p>
+    <p>
+      Sometime you will see memory will that memory over here will keep on
+      sometimes increasing and decreasing.
+    </p>
+    <p>
+      The memory is decreasing because some new references are created, garbage
+      collector will remove old methods. So every time if we replace thing,
+      replace thing, so old method is getting replaced and it is cleaned up,
+      hence old references are getting overridden.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Attributes Example</title>
+</head>
+
+<body>
+
+    <!--
+        The <h1> element below demonstrates the use of several global attributes:
+            - id: Specifies a unique identifier for the element.
+            - class: Specifies one or more classes for styling or scripting purposes.
+            - style: Specifies inline CSS styles for the element.
+            - title: Specifies a title or tooltip for the element.
+    -->
+    <h1 id="main-heading" class="header" style="color: blue;" title="Welcome">
+        Welcome to my website!
+    </h1>
+
+    <!--
+        The <p> element below demonstrates the use of global attributes:
+            - lang: Specifies the language of the content within the element.
+            - dir: Specifies the direction of the text within the element (ltr or rtl).
+            - accesskey: Specifies a keyboard shortcut to focus on the element.
+    -->
+    <p lang="en" dir="ltr" accesskey="h">
+        Press 'h' to focus on the main heading.
+    </p>
+
+    <!--
+        The <div> element below demonstrates the use of global attributes:
+            - tabindex: Specifies the order in which elements are focused using the keyboard.
+            - contenteditable: Specifies whether the content of the element is editable by the user.
+    -->
+    <div tabindex="0" contenteditable="true">
+        This content can be edited and focused using the keyboard navigation.
+    </div>
+
+    <!--
+        The <button> element below demonstrates the use of global attributes:
+            - onclick: Specifies a JavaScript function to be executed when the button is clicked.
+            - draggable: Specifies whether the element is draggable.
+    -->
+    <button onclick="alert('Button clicked!');" draggable="true">
+        Click Me
+    </button>
+
+    <!--
+        The <input> element below demonstrates the use of a custom data attribute:
+            - data-validation: Custom attribute used for storing additional data.
+    -->
+    <input type="text" id="input-field" data-validation="required">
+
+</body>
+
+</html>

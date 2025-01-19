@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation API Example</title>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1>Geolocation API Example</h1>
+
+   
+
+    <!-- Script for accessing geolocation -->
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            alert("Latitude: " + position.coords.latitude + 
+            "\nLongitude: " + position.coords.longitude);
+        }
+    </script>
+
+    <!-- Button to trigger geolocation -->
+    <button onclick="getLocation()">Get Location</button>
+
+     <!-- Explanation -->
+    <!-- 
+    The Geolocation API allows a web page to access the user's geographical location.
+    The API provides methods to retrieve the user's current position and watch for changes in position.
+    -->
+
+</body>
+</html>

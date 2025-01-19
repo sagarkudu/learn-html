@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Attributes Example</title>
+</head>
+
+<body>
+
+    <h1>Form Attributes Example</h1>
+
+    <form action="/submit" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        <li>
+            The <code>action="/submit"</code> attribute in the <code>&lt;form&gt;</code> specifies the URL to which the form data will be sent on submission.
+        </li>
+        <li>
+            The <code>method="post"</code> attribute in the <code>&lt;form&gt;</code> specifies the HTTP method used when sending form data, in this case, "post."
+        </li>
+        <li>
+            The form includes input fields for a username and password, and the data will be sent to the "/submit" URL using the "post" method.
+        </li>
+        <li>
+            The <code>required</code> attribute in the input fields indicates that the fields must be filled out before submitting the form.
+        </li>
+    </ul>
+
+</body>
+
+</html>

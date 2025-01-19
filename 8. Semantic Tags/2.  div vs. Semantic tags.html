@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div vs. Semantic Tags Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header,
+        nav,
+        main,
+        article,
+        section,
+        footer {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>Using &lt;div&gt; for Structure</h2>
+        <p>
+            The &lt;div&gt; element is a generic container used to group and structure content. It doesn't provide any
+            specific meaning to the content it contains. Styling and layout are often applied using classes and IDs.
+        </p>
+    </div>
+
+    <ul>
+        <li>
+            The <code>&lt;div&gt;</code> element is a generic container without specific meaning. It is commonly used for
+            grouping and structuring content.
+        </li>
+        <li>
+            While <code>&lt;div&gt;</code> is versatile, it doesn't convey the intended purpose of the content it
+            contains. Additional styling and layout instructions are often required using classes and IDs.
+        </li>
+    </ul>
+
+    <header>
+        <h2>Using Semantic Tags for Structure</h2>
+        <p>
+            Semantic tags like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, and &lt;footer&gt;
+            provide more meaningful structure to the content. They convey the intended purpose of each section,
+            improving accessibility and search engine optimization.
+        </p>
+    </header>
+
+    <ul>
+        <li>
+            Semantic tags carry specific meanings, indicating the role or purpose of the content they enclose. For
+            example, <code>&lt;header&gt;</code> is used for introductory content like headings or logos.
+        </li>
+        <li>
+            Using semantic tags enhances the readability of the HTML code and makes it more understandable for
+            developers and search engines.
+        </li>
+        <li>
+            Semantic tags also contribute to better accessibility by providing structure and context to assistive
+            technologies.
+        </li>
+    </ul>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

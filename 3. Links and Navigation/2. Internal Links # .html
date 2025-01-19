@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Links Example</title>
+</head>
+
+<body>
+
+    <h1>Internal Links Example</h1>
+
+    <p>This is a simple webpage demonstrating the use of internal links.</p>
+
+    <h2>Section 1</h2>
+    <p>This is the content of Section 1. You can navigate to Section 2 using the internal link below.</p>
+    <p>Click the following link to go to <a href="#section2">Section 2</a>.</p>
+
+    <h2 id="section2">Section 2</h2>
+    <p>This is the content of Section 2. You can navigate back to Section 1 using the internal link below.</p>
+    <p>Click the following link to go back to <a href="#section1">Section 1</a>.</p>
+
+    <!-- Notes -->
+    <code>
+        <pre>
+            The href="#section2" attribute in the first link creates an internal link that takes the user to the element with id="section2".
+Similarly, the href="#section1" attribute in the second link takes the user back to the element with id="section1".
+        </pre>
+    </code>
+</body>
+
+</html>

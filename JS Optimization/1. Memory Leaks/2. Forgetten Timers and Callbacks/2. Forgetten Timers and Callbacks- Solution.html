@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="Node"></div>
+
+    <script>
+      // Define the resource object
+      var someResource = { name: "Sagar Kudu" };
+
+      // Update the content periodically using setInterval
+      var timer = setInterval(function () {
+        var node = document.getElementById("Node");
+
+        if (node) {
+          // Update the content of the 'Node' div with the JSON representation of someResource
+          node.innerHTML = JSON.stringify(someResource);
+
+          //just add clear interval to solve memory leak issue
+          clearInterval("timer");
+        }
+      }, 1000); // Interval in milliseconds (e.g., every 1000ms or 1 second)
+    </script>
+  </body>
+</html>
+
+- This is second memory leak - The problem here is DOM is updating at every 1
+second of Interval i.e your DOM tree is re-rendered again and again. Note: User
+will not see any issue here, he will get normal webpage only, but actually there
+is a memory leakage exists and for big application it will be huge performance
+issue. You can see
+<div id="Node">{"name":"Sagar Kudu"}</div>
+is updating in DOM elements - So now our node value is updated, but the DOM tree
+is not redering again and again. - This will improve the performance and it will
+reduce the issues like accidental memory leakage.

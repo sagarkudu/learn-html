@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1>Local Storage Example</h1>
+
+    <!-- Explanation -->
+    <!-- 
+    The Local Storage API allows web applications to store data locally within the user's browser.
+    The data persists even after the browser is closed and reopened, providing a simple way to store user preferences, settings, and other data.
+    -->
+
+    <!-- Script for using local storage -->
+    <script>
+        // Check if local storage is supported
+        if (typeof(Storage) !== "undefined") {
+            // Store data
+            localStorage.setItem("username", "John");
+            // Retrieve data
+            var username = localStorage.getItem("username");
+            alert("Welcome back, " + username + "!");
+        } else {
+            alert("Sorry, your browser does not support local storage.");
+        }
+    </script>
+
+     <!-- Heading -->
+     <h1>Local Storage CRUD Example</h1>
+
+     <!-- Form for adding items -->
+     <form id="addItemForm">
+         <input type="text" id="itemInput" placeholder="Enter item">
+         <button type="submit">Add Item</button>
+     </form>
+ 
+     <!-- Display added items -->
+     <ul id="itemList"></ul>
+ 
+     <!-- Script for CRUD operations -->
+     <script>
+         // Function to add item to local storage
+         function addItem(event) {
+             event.preventDefault(); // Prevent form submission
+             var newItem = document.getElementById("itemInput").value;
+             if (newItem.trim() !== "") {
+                 var items = JSON.parse(localStorage.getItem("items")) || [];
+                 items.push(newItem);
+                 localStorage.setItem("items", JSON.stringify(items));
+                 displayItems();
+                 document.getElementById("addItemForm").reset();
+             }
+         }
+ 
+         // Function to display items from local storage
+         function displayItems() {
+             var items = JSON.parse(localStorage.getItem("items")) || [];
+             var itemList = document.getElementById("itemList");
+             itemList.innerHTML = "";
+             items.forEach(function(item, index) {
+                 var li = document.createElement("li");
+                 li.textContent = item;
+                 itemList.appendChild(li);
+ 
+                 // Add button to delete item
+                 var deleteButton = document.createElement("button");
+                 deleteButton.textContent = "Delete";
+                 deleteButton.onclick = function() {
+                     deleteItem(index);
+                 };
+                 li.appendChild(deleteButton);
+             });
+         }
+ 
+         // Function to delete item from local storage
+         function deleteItem(index) {
+             var items = JSON.parse(localStorage.getItem("items")) || [];
+             items.splice(index, 1);
+             localStorage.setItem("items", JSON.stringify(items));
+             displayItems();
+         }
+ 
+         // Initial display of items
+         displayItems();
+ 
+         // Event listener for form submission
+         document.getElementById("addItemForm").addEventListener("submit", addItem);
+     </script>
+
+    <!-- Explanation: -->
+
+      <!--
+- The form allows users to add items to the list. When the form is submitted, the `addItem` function is called to add the item to local storage.
+- The `displayItems` function retrieves items from local storage and displays them in an unordered list (`<ul>`). It also adds a delete button next to each item.
+- The `deleteItem` function removes the selected item from the list and updates the local storage accordingly.
+- Initially, the `displayItems` function is called to show any existing items in local storage.
+- Event listeners are added to handle form submission and item deletion. -->
+
+</body>
+</html>

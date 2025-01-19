@@ -1,0 +1,79 @@
+1. Basic Structure:
+   - Document structure (<!DOCTYPE html>, <html>, <head>, <body>)
+   - Headings (<h1> to <h6>)
+   - Paragraphs (<p>)
+   - Line Breaks (<br>)
+
+2. Text Formatting:
+   - Bold (<strong>) and Italic (<em>)
+   - Underline (<u>)
+   - Superscript (<sup>) and Subscript (<sub>)
+   - Preformatted text (<pre>)
+
+3. Links and Navigation:
+   - Anchor (<a>) and Href attribute
+   - Internal links
+   - External links
+   - Navigation menus
+
+4. Lists:
+   - Unordered Lists (<ul>, <li>)
+   - Ordered Lists (<ol>, <li>)
+   - Definition Lists (<dl>, <dt>, <dd>)
+
+5. Images:
+   - Image (<img>) and Src attribute
+   - Image alternative text (alt)
+
+6. Tables:
+   - Table structure (<table>, <tr>, <th>, <td>)
+   - Table headers and data
+   - Spanning rows and columns
+
+7. Forms:
+   - Form element (<form>)
+   - Input types (<input>)
+   - Textareas (<textarea>)
+   - Buttons (<button>)
+   - Dropdowns (<select>, <option>)
+   - Form attributes (action, method)
+
+8. Semantic HTML:
+   - Semantic tags (<header>, <nav>, <main>, <article>, <section>, <footer>)
+   - <div> vs. Semantic tags
+
+9. Multimedia:
+   - Audio (<audio>)
+   - Video (<video>)
+   - Embedding content
+
+10. HTML Entities:
+    - Special characters (&lt;, &gt;, &amp;)
+    - Non-breaking space (&nbsp;)
+
+11. Comments:
+    - HTML comments (<!-- Comment goes here -->)
+
+12. Attributes:
+    - Global attributes
+    - Event attributes
+
+13. Validation:
+    - W3C Markup Validation Service
+
+14. Responsive Design:
+    - Viewport meta tag
+    - Media queries
+
+15. HTML5 APIs:
+    - Geolocation API
+    - Local Storage
+
+16. Best Practices:
+    - Clean code practices
+    - Accessibility considerations
+
+17. Advanced Topics:
+    - Custom data attributes
+    - Microformats
+    - Web components

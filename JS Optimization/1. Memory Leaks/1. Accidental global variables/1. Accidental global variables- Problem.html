@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accidental global variable</title>
+    <script>
+        //global variable
+        var a = 10;
+
+        //c is global
+        function abc(){
+            c = "Hi Sagar Kudu"
+        }
+        abc()
+        console.log(window.c)
+
+        //d is still global here
+        function abcd(){
+            this.d = "I love india"
+        }
+        abcd()
+        console.log(window.d) 
+
+    </script>
+</head>
+<body>
+   <p>
+    Note: These are some accidental thing that we do in terms of we are accidently leaking some value some references to global space where anyone can access definitely that is a memory leak and top of it anyone can override it as well.
+   </p> 
+
+   <code>
+    <pre>
+        &lt;&gt;
+        //global variable
+        var a = 10;
+
+        //c is global
+        function abc(){
+          c = "Hi Sagar Kudu" //declare the variable
+        }
+        abc()
+        console.log(window.c)
+
+        //d is still global here
+        function abcd(){
+            this.d = "I love india"
+        }
+        abcd() //create new instance 
+        console.log(window.d) 
+        &lt;&gt;
+    </pre>
+   </code>
+</body>
+</html>

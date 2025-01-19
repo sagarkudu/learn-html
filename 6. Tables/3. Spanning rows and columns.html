@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanning Rows and Columns Example</title>
+</head>
+
+<body>
+
+    <h1>Spanning Rows and Columns Example</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th rowspan="2">ID</th>
+                <th colspan="2">Details</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td rowspan="2">John Doe</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bob Johnson</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            The <code>rowspan="2"</code> attribute in the first <code>&lt;th&gt;</code> spans two rows.
+        </li>
+        <li>
+            The <code>colspan="2"</code> attribute in the second <code>&lt;th&gt;</code> spans two columns.
+        </li>
+        <li>
+            The <code>rowspan="2"</code> attribute in the second <code>&lt;td&gt;</code> in the first row spans two rows.
+        </li>
+        <li>
+            The table demonstrates how to use <code>rowspan</code> and <code>colspan</code> to merge cells both vertically and horizontally.
+        </li>
+    </ul>
+
+</body>
+
+</html>

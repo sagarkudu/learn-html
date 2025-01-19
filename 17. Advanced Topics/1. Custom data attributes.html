@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Data Attributes Example</title>
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1>Custom Data Attributes Example</h1>
+
+    <!-- Explanation -->
+    <!-- 
+    Custom data attributes (data-*) allow developers to attach extra information to HTML elements that can be accessed via JavaScript. These attributes are prefixed with "data-" followed by a descriptive name.
+    This allows developers to store additional data without using non-standard attributes or altering the appearance or behavior of elements.
+    Common use cases for custom data attributes include storing configuration settings, unique identifiers, or data for JavaScript functions.
+    
+    Q. Are data attributes safe to use?
+
+    Yes, data attributes are considered safe to use because they are part of the HTML5 specification and are designed specifically for storing custom data associated with HTML elements. They provide a standardized and reliable way to attach additional information to elements without affecting their default behavior or interfering with browser rendering.
+
+    Some key points regarding the safety of data attributes:
+
+    Standardized: Data attributes are part of the HTML5 specification and are widely supported by modern browsers, ensuring consistency and compatibility across different platforms.
+
+    Encapsulation: Data attributes do not affect the styling or behavior of HTML elements by default. They provide a clean and encapsulated way to store custom data without introducing side effects or conflicts with existing attributes.
+
+    Accessibility: Data attributes are accessible to JavaScript through the dataset property, allowing developers to access and manipulate the stored data programmatically. This facilitates dynamic interaction with the DOM while maintaining separation of concerns.
+
+    Escape Characters: Data attribute values are parsed as strings and are automatically escaped by the browser, minimizing the risk of XSS (Cross-Site Scripting) attacks. However, it's important to ensure that any user-generated content stored in data attributes is properly sanitized to prevent security vulnerabilities.
+
+    Overall, data attributes offer a safe and convenient mechanism for storing custom data within HTML elements, enhancing the flexibility and extensibility of web applications.
+
+    -->
+
+    <!-- Example of custom data attributes -->
+
+    <!-- Using data attributes to store extra information -->
+    <div id="user" data-user-id="123" data-user-name="john@example.com" data-user-role="admin"></div>
+
+    <!-- Accessing data attributes via JavaScript -->
+    <script>
+        const userElement = document.getElementById('user');
+        const userId = userElement.dataset.userId;
+        const userName = userElement.dataset.userName;
+        const userRole = userElement.dataset.userRole;
+
+        console.log('User ID:', userId);
+        console.log('User Name:', userName);
+        console.log('User Role:', userRole);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Attributes Example</title>
+</head>
+
+<body>
+
+    <!-- 
+        The <button> element below demonstrates the use of event attributes:
+            - onclick: Specifies a JavaScript code to execute when the button is clicked.
+            - onmouseover: Specifies a JavaScript code to execute when the mouse pointer is moved over the button.
+            - onmouseout: Specifies a JavaScript code to execute when the mouse pointer moves out of the button.
+    -->
+    <button onclick="alert('Button clicked!');" onmouseover="console.log('Mouse over');" onmouseout="console.log('Mouse out');">
+        Click Me
+    </button>
+
+    <!-- 
+        The <input> element below demonstrates the use of event attributes:
+            - onfocus: Specifies a JavaScript code to execute when the input field receives focus.
+            - onblur: Specifies a JavaScript code to execute when the input field loses focus.
+            - onkeyup: Specifies a JavaScript code to execute when a key is released while the input field is in focus.
+    -->
+    <input type="text" placeholder="Type here..." onfocus="console.log('Input field focused');" onblur="console.log('Input field blurred');" onkeyup="console.log('Key released');">
+
+</body>
+
+</html>

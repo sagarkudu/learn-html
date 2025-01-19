@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="ref1">Some reference id</div>
+
+    <script>
+      var a = document.getElementById('ref1')
+      console.log('value of ref element:', a)
+
+      console.log('-----remove ref1 reference from the DOM----')
+      document.body.removeChild(document.getElementById('ref1'))
+      console.log(document.getElementById('ref1')) //null
+      console.log(a) //<div id="ref1">Some reference id</div>
+
+      console.log('-----try to make value of a to null----')
+      a = null
+      console.log(document.getElementById('ref1')) //null
+      console.log(a) //null
+
+      console.log('-----passing value of a directly----')
+      console.log(document.getElementById('ref1')) //null
+      console.log(a) //null
+    </script>
+
+    <p>
+      - Behind the it is to visualize the memory leakage here, as in the console
+      you will see only 'Some reference id'>
+    </p>
+    <p>
+      - make sure you are not playing in the global space because if any these
+      references you are not cleaning it manually.
+    </p>
+    <p>
+      - The solution is to use the IFFE function which help to get rid of
+      automatically cleaning up the variables where you are maintaining your
+      references
+    </p>
+    <p>
+      - even we have removed the reference of ref1 it is still present in DOM.
+    </p>
+    <p>
+      - Somehow because we stored into some variable into some reference it is
+      still pointing to the particular DOM
+    </p>
+    <p></p>
+  </body>
+</html>

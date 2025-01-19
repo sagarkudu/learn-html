@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Closures Memory Leak</p>
+
+    <script>
+      /// any variable which we are going to store data -->
+      var data = null
+
+      var replaceData = function () {
+        //create another variable and store data here
+        var originalData = data
+
+        //use new variable with below function
+        // note that this function is not called anywhere
+        var unused = function () {
+          if (originalData) console.log('hi...')
+        }
+        data = {
+          // creating new references always
+          longStr: new Array(1000000),
+          someMethod: function () {
+            console.log('Bye')
+          },
+        }
+      }
+
+      setInterval(replaceData, 1000) //
+    </script>
+
+    <p>
+      We have referenced variable 'originalData' which is created inside the
+      function which is created here 'var originalData = data' is not getting
+      Garbage Collector because it assumes there is a method which was created
+      and referenced inside that may be still used.
+    </p>
+    <p>
+      Now the memory consumption over here is more than 200 mb and if we leave
+      this system like this probably it can crash and sometime you might have
+      seen on your screen out of memory.
+    </p>
+    <p>
+      So handle the Closures with very cautious and very caution while creating
+      any variable
+    </p>
+    <p>
+      Always check if you think there is a glitch, always check Memory usage.
+    </p>
+  </body>
+</html>

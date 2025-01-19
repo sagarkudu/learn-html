@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Node"></div>
+
+    <script>
+        // Define the resource object
+        var someResource = {"name": "Sagar Kudu"};
+
+        // Update the content periodically using setInterval
+        setInterval(function() {
+            var node = document.getElementById('Node');
+
+            if (node) {
+                // Update the content of the 'Node' div with the JSON representation of someResource
+                node.innerHTML = JSON.stringify(someResource);
+            }
+        }, 1000); // Interval in milliseconds (e.g., every 1000ms or 1 second)
+    </script>
+</body>
+</html>
+
+- This is second memory leak 
+- Again most of the people are aware of Timer you have setInterval() or you have set callback in JS
+- Consider we are having a DOM element
+<div id="node">I love India</div>
+- The intent of adding setInterval() is change the content in DOM if node value is already present in the DOM.
+
+- In your case or in project it can be some data which is Asynchronously loaded or some DOM references which are getting added from somewhere and you don't it probably from where it is being added!
+- In the code we have added JSON.Stringify() in order to perform some complex operations using some function or reference.
+

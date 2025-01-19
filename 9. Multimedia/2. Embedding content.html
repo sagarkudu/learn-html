@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedding Multimedia Content</title>
+</head>
+
+<body>
+
+    <h1>Embedding Multimedia Content</h1>
+
+    <h2>Embedding Images</h2>
+    <img src="images/sample.jpg" alt="Sample Image" width="300">
+
+    <h2>Embedding Audio</h2>
+    <audio controls>
+        <source src="audio/sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Embedding Video</h2>
+    <video controls width="400">
+        <source src="video/sample.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <p>This is an example of embedding multimedia content into a webpage using HTML. Images, audio, and video can be
+        embedded using the <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;video&gt;</code> elements
+        respectively. The <code>src</code> attribute specifies the source of the multimedia content, while the
+        <code>alt</code> attribute provides alternative text for images and the fallback content for audio and video
+        elements.</p>
+
+    <ul>
+        <li>Use the <code>&lt;img&gt;</code> element to embed images. Specify the image source using the <code>src</code>
+            attribute.</li>
+        <li>Use the <code>&lt;audio&gt;</code> element to embed audio. Specify the audio source using the <code>src</code>
+            attribute. The <code>controls</code> attribute adds audio controls.</li>
+        <li>Use the <code>&lt;video&gt;</code> element to embed video. Specify the video source using the <code>src</code>
+            attribute. The <code>controls</code> attribute adds video controls.</li>
+        <li>Provide alternative text for images using the <code>alt</code> attribute to ensure accessibility.</li>
+        <li>If the browser does not support the multimedia element or format, the specified fallback content will be
+            displayed.</li>
+    </ul>
+
+</body>
+
+</html>

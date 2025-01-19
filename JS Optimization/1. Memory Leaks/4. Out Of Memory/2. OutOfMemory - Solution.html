@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="ref1">Some reference id</div>
+
+    <script>
+      ;(function () {
+        var a = document.getElementById('ref1')
+        console.log('value of ref element:', a)
+
+        console.log('-----remove ref1 reference from the DOM----')
+        document.body.removeChild(document.getElementById('ref1'))
+        console.log(document.getElementById('ref1')) //null
+        console.log(a) //<div id="ref1">Some reference id</div> -  a still holds a reference to the element that was removed
+
+        console.log(
+          '-----try to make value of a to null as ref1 as reference was not removed ----'
+        )
+        a = null //Setting a to null removes the reference, making a point to null
+        console.log(document.getElementById('ref1')) //null
+        console.log(a) //null
+
+        console.log('-----passing value of a directly----')
+        console.log(document.getElementById('ref1')) //null
+        console.log(a) //null
+      })()
+    </script>
+
+    <p>
+      - Wrapping the code inside an IIFE ensures that the variables declared
+      within it are scoped locally and won't leak into the global scope, thus
+      mitigating potential memory leaks.
+    </p>
+
+    <p>
+      using an IIFE ensures that the variable a is scoped locally within the
+      function, and once the function execution is complete, a and any other
+      variables declared within the IIFE are no longer accessible. This means
+      that any references to DOM elements stored in variables within the IIFE
+      will be automatically cleaned up when the function finishes executing,
+      preventing memory leakage. Thus IIFE provides encapsulation and automatic
+      memory cleanup.
+    </p>
+
+    <p>
+      In JavaScript, when you retrieve an element from the DOM using
+      getElementById and store it in a variable (a in this case), you're not
+      actually storing the element itself in the variable.
+    </p>
+
+    <p>
+      Instead, you're storing a reference to the element. So, even though you
+      remove the element from the DOM using removeChild, the reference to that
+      element still exists in the variable a.
+    </p>
+
+    <p>
+      This means that a still holds a reference to the element that was removed,
+      and hence, when you log a, it still shows the element. Setting a to null
+      afterwards effectively removes the reference to the element, which is why
+      subsequent logs of a would show null.
+    </p>
+
+    <p></p>
+  </body>
+</html>
